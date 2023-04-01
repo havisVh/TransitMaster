@@ -8,6 +8,7 @@
     <link href='/style.css' rel='stylesheet' type='text/css'>
 
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
 
     <link rel="stylesheet"
@@ -25,7 +26,7 @@
     </div>
     <div class="column">
 
-        <form onsubmit='return false' class="form">
+        <form onsumbit="return false" class="form" method="POST">
             <div class="row" style="height: 48px;">
                 <label for="username">Username</label>
                 <input type="email" name="email" id="email" placeholder="email" required class="input">
@@ -35,13 +36,14 @@
                 <input type="password" name="password" id="password" placeholder="Password" required class="input">
             </div>
         </form>
-
-
-        <button class="login row" onclick="validate_login()">Login
+        <button class="login row" onclick="validate_login()" type="submit">Login
             <span class="material-symbols-sharp">
                 arrow_forward
             </span>
         </button>
+
+
+
     </div>
 
     <script src="login.js"></script>
