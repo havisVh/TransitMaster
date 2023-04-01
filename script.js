@@ -43,3 +43,19 @@ elem('close').addEventListener('click', function () {
     closeDrawer();
 });
 
+
+
+var client = new Parse.LiveQueryClient({
+    applicationId: 'Fy5pr3wkWGSSpLoll4GwXHWdT3hj9QCFURjOyY16',
+    serverURL: 'wss://' + 'anuthampiencode.b4a.io', // Example: 'wss://livequerytutorial.back4app.io'
+    javascriptKey: 'hoxi8hxkH9tbslPFkkLZjVvc8j3Xxkp8zyQa3aBN'
+});
+client.open();
+
+var query = new Parse.Query('LiveQuery');
+query.ascending('createdAt').limit(5);
+var subscription = client.subscribe(query);
+
+subscription.on('update', ev => {
+    console.log('New object created: ' + JSON.stringify(ev['id']));
+});

@@ -114,7 +114,8 @@ header {
   height: 100%;
 }
 
-button {
+#control > button,
+#drawer > button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -124,6 +125,34 @@ button {
   -webkit-appearance: none;
   margin: 8px;
 }
+.form {
+  width: 47%;
+  height: 105px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.input {
+  width: 80%;
+  margin: 4px;
+  text-align: center;
+  outline-style: solid;
+  outline-color: rgb(255, 255, 255);
+  outline-width: 0px;
+  color: var(--text);
+  background: rgba(43, 43, 43, 0);
+  /* border-width: 2px; */
+  border-style: none;
+
+  border-bottom: 2px solid #ffffff;
+  height: 28px;
+  border-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+  border-top-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+  border-right-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+  border-bottom-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+  border-left-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+}
 
 #openQR {
   color: #557dff;
@@ -131,6 +160,7 @@ button {
   cursor: pointer;
   transition: 100ms;
 }
+
 #close {
   color: hsl(0, 100%, 67%);
   background: hsl(0, 100%, 16%);
@@ -147,6 +177,70 @@ button {
   background: #557dff;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.login {
+  width: 200px;
+  margin: 12px;
+  height: 54px;
+  padding: 13px;
+  cursor: pointer;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff3300, #ff0000);
+  font-weight: 800;
+  font-size: 18px;
+  outline: none;
+  color: #000;
+  border: none;
+  transition: 400ms;
+}
+.login > span {
+  margin-left: 12px;
+  font-weight: 900;
+}
+.login:hover {
+  background: black;
+  color: #ff3300;
+}
+.signup {
+  width: 200px;
+  margin: 12px;
+  height: 54px;
+  padding: 13px;
+  cursor: pointer;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #00ff91, #0095ff);
+  font-weight: 800;
+  font-size: 18px;
+  outline: none;
+  color: #000;
+  border: none;
+  transition: 400ms;
+}
+.signup > span {
+  margin-left: 12px;
+  font-weight: 900;
+}
+.signup:hover {
+  background: black;
+  color: #00ff91;
+}
 .drawer {
   width: 90vw;
   height: 80vh;
@@ -168,6 +262,7 @@ button {
   align-items: center;
   align-content: center;
   flex-direction: column;
+  transition-timing-function: cubic-bezier(0.61, 1.24, 0.94, 0.99);
 }
 .drawer > img {
   width: 150px;
@@ -202,5 +297,8 @@ button {
   #control {
     width: 90%;
     height: 30%;
+  }
+  label {
+    display: none;
   }
 }
